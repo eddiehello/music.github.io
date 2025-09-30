@@ -4,19 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黃若庭音樂經紀公司</title>
+  <title>星韻古典音樂經紀公司</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Animate on Scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #fbc2eb, #a18cd1);
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #1c1c3c, #3b2d56, #5e3b4e, #a27b5c);
       background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
+      animation: gradientBG 15s ease infinite;
+      color: #f2f2f2;
     }
     @keyframes gradientBG {
       0%{background-position:0% 50%}
@@ -24,66 +25,60 @@
       100%{background-position:0% 50%}
     }
     .navbar {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       backdrop-filter: blur(6px);
     }
-    .navbar a {
-      font-weight: 600;
-      color: #fff !important;
-    }
+    .navbar a { font-weight: 600; color: #f8f8f8 !important; }
     .hero {
       height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
     }
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 700;
-      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-      background-size: 600% 600%;
+      background: linear-gradient(90deg,#f5deb3,#ffd700,#e6c200);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: gradientText 8s ease infinite;
+      animation: glow 6s ease-in-out infinite;
     }
-    @keyframes gradientText {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes glow {
+      0%,100% { text-shadow: 0 0 10px rgba(255,215,0,0.6); }
+      50% { text-shadow: 0 0 20px rgba(255,255,200,0.9); }
     }
-    .btn-gradient {
-      background: linear-gradient(90deg,#a18cd1,#fbc2eb,#fad390);
+    .btn-gold {
+      background: linear-gradient(90deg,#d4af37,#ffd700);
       border: none;
-      color: #fff;
+      color: #1c1c1c;
       font-weight: 600;
       transition: all 0.4s;
     }
-    .btn-gradient:hover {
+    .btn-gold:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(255,255,255,0.8);
-      background-position: right center;
+      box-shadow: 0 0 20px rgba(255,215,0,0.8);
     }
     .card {
       border: none;
       border-radius: 15px;
-      overflow: hidden;
+      background: rgba(255,255,255,0.1);
+      color: #f2f2f2;
       transition: transform 0.4s, box-shadow 0.4s;
     }
     .card:hover {
       transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
     }
     .section-title {
       font-weight: 700;
-      color: #333;
       text-align: center;
       margin-bottom: 2rem;
+      color: #ffd700;
     }
     footer {
-      background: rgba(0,0,0,0.85);
-      color: #fff;
+      background: rgba(0,0,0,0.9);
+      color: #ccc;
       padding: 20px 0;
       text-align: center;
       position: relative;
@@ -95,7 +90,7 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg,#ff9a9e,#fad0c4,#fad390,#fbc2eb,#a18cd1);
+      background: linear-gradient(90deg,#d4af37,#ffd700,#e6c200);
       background-size: 400% 400%;
       animation: gradientLine 8s ease infinite;
     }
@@ -113,15 +108,15 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">黃若庭經紀</a>
+      <a class="navbar-brand fw-bold" href="#">星韻古典音樂經紀</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#artist">藝人介紹</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tours">巡演</a></li>
-          <li class="nav-item"><a class="nav-link" href="#news">新聞</a></li>
+          <li class="nav-item"><a class="nav-link" href="#artists">藝術家</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tours">音樂會</a></li>
+          <li class="nav-item"><a class="nav-link" href="#news">最新消息</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
         </ul>
       </div>
@@ -132,23 +127,33 @@
 
   <section class="hero">
     <div data-aos="zoom-in">
-      <h1>黃若庭 · 經典與新聲的交響</h1>
-      <p class="lead">專屬經紀 · 音樂巡演 · 藝術發展</p>
-      <a href="#contact" class="btn btn-gradient btn-lg mt-3">聯絡我們</a>
+      <h1>傳承經典，奏響永恆樂章</h1>
+      <p class="lead">專業古典音樂經紀 · 國際巡演 · 藝術推廣</p>
+      <a href="#contact" class="btn btn-gold btn-lg mt-3">立即合作</a>
     </div>
   </section>
 
-  <!-- Artist -->
+  <!-- Artists -->
 
-  <section id="artist" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">專屬藝人</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="card">
-          <img src="huangruoting.jpg" class="card-img-top" alt="黃若庭" loading="lazy">
+  <section id="artists" class="container py-5">
+    <h2 class="section-title" data-aos="fade-up">旗下藝術家</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card p-3">
+          <img src="pianist.jpg" class="card-img-top" alt="鋼琴家" loading="lazy">
           <div class="card-body">
-            <h5 class="card-title">黃若庭</h5>
-            <p class="card-text">當代備受矚目的音樂家，以獨特嗓音與深情詮釋聞名，足跡遍布國際舞台，專注於推廣古典與跨界作品。</p>
+            <h5 class="card-title">李安然</h5>
+            <p class="card-text">鋼琴家，以精湛技巧詮釋蕭邦與拉赫瑪尼諾夫。</p>
+            <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#artistModal1">查看更多</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card p-3">
+          <img src="violinist.jpg" class="card-img-top" alt="小提琴家" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">陳雅萱</h5>
+            <p class="card-text">小提琴家，專長於巴洛克與浪漫樂派作品。</p>
           </div>
         </div>
       </div>
@@ -158,18 +163,18 @@
   <!-- Tours -->
 
   <section id="tours" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">巡演行程</h2>
+    <h2 class="section-title" data-aos="fade-up">音樂會行程</h2>
     <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
-      <table class="table table-hover align-middle text-center">
-        <thead class="table-dark">
+      <table class="table table-hover align-middle text-center text-light">
+        <thead style="background:#333;">
           <tr>
-            <th>日期</th><th>地點</th><th>藝人</th><th>購票</th>
+            <th>日期</th><th>地點</th><th>演出者</th><th>購票</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>2025/12/26</td><td>國家演奏廳</td><td>黃若庭</td>
-            <td><a href="#" class="btn btn-gradient btn-sm">購票</a></td>
+            <td>2025/12/26</td><td>國家音樂廳</td><td>李安然（鋼琴獨奏會）</td>
+            <td><a href="#" class="btn btn-gold btn-sm">購票</a></td>
           </tr>
         </tbody>
       </table>
@@ -179,13 +184,13 @@
   <!-- News -->
 
   <section id="news" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">最新新聞</h2>
+    <h2 class="section-title" data-aos="fade-up">最新消息</h2>
     <div class="row g-4">
-      <div class="col-md-8 mx-auto" data-aos="fade-up">
+      <div class="col-md-6" data-aos="fade-right">
         <div class="card p-3">
-          <h5>黃若庭全新專輯發行</h5>
+          <h5>李安然發行《夜曲集》專輯</h5>
           <p class="text-muted">2025-09-20</p>
-          <p>最新專輯融合古典與現代元素，音樂評論一致好評，並即將展開國際巡演。</p>
+          <p>專輯收錄蕭邦與拉赫瑪尼諾夫名作，廣受樂評盛讚。</p>
         </div>
       </div>
     </div>
@@ -195,11 +200,61 @@
 
   <section id="contact" class="container py-5">
     <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
-    <form id="contactForm" class="p-4 bg-white rounded shadow" data-aos="fade-up" data-aos-delay="150">
+    <form id="contactForm" class="p-4 bg-dark rounded shadow" data-aos="fade-up" data-aos-delay="150">
       <div class="mb-3">
         <label class="form-label">姓名</label>
         <input type="text" class="form-control" required>
       </div>
       <div class="mb-3">
-        <label
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">訊息</label>
+        <textarea class="form-control" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">送出</button>
+      <div id="formMessage" class="alert alert-success mt-3">感謝您的聯絡，我們將儘快回覆！</div>
+    </form>
+  </section>
 
+  <!-- Footer -->
+
+  <footer>
+    <p>&copy; 2025 星韻古典音樂經紀公司 | All Rights Reserved</p>
+  </footer>
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="artistModal1" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">李安然</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>鋼琴獨奏家，代表作：蕭邦夜曲全本。</p>
+          <audio controls><source src="piano.mp3" type="audio/mpeg"></audio>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("formMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
