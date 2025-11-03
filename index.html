@@ -8,169 +8,176 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Animate on Scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* === 背景動畫 === */
+    :root {
+      --gold: #c8a951;
+      --gold-light: #f6e8b1;
+      --dark: #1a1a1a;
+      --gray: #f8f8f8;
+    }
+
     body {
-      font-family: 'Playfair Display', serif;
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d, #00c9ff, #92fe9d);
-      background-size: 600% 600%;
-      animation: gradientBG 20s ease infinite;
-      color: #f8f8f8;
-      overflow-x: hidden;
-    }
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
     }
 
-    /* === 導覽列 === */
+    /* Navbar */
     .navbar {
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
     }
-    .navbar a { font-weight: 600; color: #fff !important; transition: color 0.3s; }
-    .navbar a:hover { color: #ffda79 !important; }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark) !important;
+    }
+    .navbar-nav .nav-link {
+      color: #444 !important;
+      font-weight: 600;
+      margin-left: 15px;
+      transition: color 0.3s;
+    }
+    .navbar-nav .nav-link:hover {
+      color: var(--gold) !important;
+    }
 
-    /* === Hero 區 === */
+    /* Hero */
     .hero {
-      height: 90vh;
+      background: url('hero.jpg') center/cover no-repeat;
+      height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      background: rgba(0,0,0,0.5);
+      padding: 2rem 3rem;
+      border-radius: 10px;
       text-align: center;
     }
     .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      background: linear-gradient(90deg,#ff8a00,#e52e71,#a18cd1,#43cea2,#f8ffae);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 5s linear infinite;
-    }
-    @keyframes shimmer {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    .hero p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.2rem;
-      color: #fff7cc;
-      text-shadow: 0 0 8px rgba(255,255,255,0.4);
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--gold-light);
     }
 
-    /* === 按鈕樣式 === */
-    .btn-gold {
-      background: linear-gradient(90deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
-      border: none;
-      color: #1c1c1c;
-      font-weight: 700;
-      box-shadow: 0 0 15px rgba(255,255,255,0.4);
-      transition: all 0.4s;
-    }
-    .btn-gold:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px rgba(255,255,255,0.8);
-    }
-
-    /* === 區塊標題 === */
+    /* Section Title */
     .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
       font-weight: 700;
+      color: var(--dark);
       text-align: center;
       margin-bottom: 2rem;
-      background: linear-gradient(90deg,#fcb045,#fd1d1d,#833ab4,#3acfd5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glowtext 4s ease-in-out infinite;
+      position: relative;
     }
-    @keyframes glowtext {
-      0%,100% { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
-      50% { text-shadow: 0 0 25px rgba(255,255,255,0.9); }
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      display: block;
+      margin: 0.8rem auto 0;
     }
 
-    /* === 卡片 === */
+    /* Buttons */
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-gold:hover {
+      background: #b79530;
+      transform: translateY(-2px);
+    }
+
+    /* Cards */
     .card {
       border: none;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      transition: transform 0.4s, box-shadow 0.4s;
+      border-radius: 10px;
+      background-color: var(--gray);
+      transition: all 0.3s;
     }
     .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 25px rgba(255,255,255,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
 
-    /* === 表格 === */
+    /* About */
+    #about {
+      background-color: var(--gray);
+      padding: 60px 0;
+    }
+
+    /* Artists */
+    #artists img {
+      border-radius: 10px;
+    }
+
+    /* Table (Concerts) */
     table {
-      border-radius: 15px;
+      background: #fff;
+      border-radius: 10px;
       overflow: hidden;
     }
     thead {
-      background: linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);
+      background-color: var(--gold);
+      color: white;
     }
 
-    /* === 聯絡表單 === */
+    /* Product Sections */
+    .product-card img {
+      border-radius: 10px;
+    }
+
+    /* Contact */
     #contactForm {
-      background: rgba(0,0,0,0.7);
-      border: 2px solid rgba(255,255,255,0.2);
-    }
-    .form-control {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border: none;
-    }
-    .form-control:focus {
-      background: rgba(255,255,255,0.2);
-      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+      background: var(--gray);
+      padding: 2rem;
+      border-radius: 10px;
     }
 
-    /* === Footer === */
+    /* Footer */
     footer {
-      background: rgba(0,0,0,0.9);
-      color: #eee;
-      padding: 20px 0;
+      background: var(--dark);
+      color: #ccc;
+      padding: 30px 0;
       text-align: center;
-      position: relative;
-      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
     }
     footer::before {
       content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
+      display: block;
+      height: 4px;
       width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb);
-      background-size: 300% 300%;
-      animation: gradientLine 6s ease infinite;
+      background: var(--gold);
+      margin-bottom: 1rem;
     }
-    @keyframes gradientLine {
-      0% {background-position:0% 50%}
-      50% {background-position:100% 50%}
-      100% {background-position:0% 50%}
-    }
-
-    #formMessage { display: none; }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">🌟 星韻古典音樂經紀</a>
+      <a class="navbar-brand" href="#">星韻古典音樂經紀公司</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">關於我們</a></li>
           <li class="nav-item"><a class="nav-link" href="#artists">藝術家</a></li>
           <li class="nav-item"><a class="nav-link" href="#tours">音樂會</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications">出版品</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">文創商品</a></li>
           <li class="nav-item"><a class="nav-link" href="#news">最新消息</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
         </ul>
@@ -180,41 +187,63 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div data-aos="zoom-in">
-      <h1>傳承經典 · 奏響璀璨樂章</h1>
-      <p class="lead">專業古典音樂經紀 · 國際巡演 · 藝術推廣</p>
-      <a href="#contact" class="btn btn-gold btn-lg mt-3">立即合作</a>
+    <div class="hero-content">
+      <h1>傳承經典．奏響永恆樂章</h1>
+      <p>專業古典音樂經紀 ｜ 國際巡演 ｜ 藝術推廣</p>
+      <a href="#contact" class="btn btn-gold mt-3">聯絡我們</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container py-5">
+    <h2 class="section-title">關於我們</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p>星韻古典音樂經紀公司致力於推廣古典音樂藝術，發掘並支持傑出音樂家，舉辦國際巡演與藝術合作，打造跨越時代的音樂對話。</p>
+        <p>我們相信，古典音樂不僅是藝術的延續，更是文化的共鳴。我們的使命是讓每一次演出，成為觀眾心中永恆的迴響。</p>
+      </div>
+      <div class="col-md-6">
+        <img src="about.jpg" class="img-fluid rounded" alt="公司介紹">
+      </div>
     </div>
   </section>
 
   <!-- Artists -->
   <section id="artists" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">旗下藝術家</h2>
+    <h2 class="section-title">旗下藝術家</h2>
     <div class="row g-4">
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card p-3">
-          <img src="pianist.jpg" class="card-img-top rounded-3" alt="小提琴家" loading="lazy">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="artist1.jpg" class="card-img-top" alt="鋼琴家 余欣庭">
           <div class="card-body">
-            <h5 class="card-title fw-bold">黃若庭</h5>
-            <p class="card-text">小提琴家，專長於巴洛克與浪漫樂派作品。</p>
-            <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#artistModal1">查看更多</button>
+            <h5 class="card-title">余欣庭</h5>
+            <p class="card-text">鋼琴家，以細膩詮釋展現蕭邦的浪漫與靈魂。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="artist2.jpg" class="card-img-top" alt="小提琴家 黃若庭">
+          <div class="card-body">
+            <h5 class="card-title">黃若庭</h5>
+            <p class="card-text">小提琴家，活躍於歐洲音樂廳，擅長浪漫樂派作品。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tours -->
+  <!-- Concerts -->
   <section id="tours" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">音樂會行程</h2>
-    <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
-      <table class="table table-hover align-middle text-center text-light">
-        <thead>
-          <tr><th>日期</th><th>地點</th><th>演出者</th><th>購票</th></tr>
-        </thead>
+    <h2 class="section-title">音樂會行程</h2>
+    <div class="table-responsive">
+      <table class="table text-center align-middle">
+        <thead><tr><th>日期</th><th>地點</th><th>演出者</th><th>購票</th></tr></thead>
         <tbody>
           <tr>
-            <td>2025/12/26</td><td>國家音樂廳</td><td>黃若庭（小提琴獨奏會）</td>
+            <td>2025/12/26</td>
+            <td>國家音樂廳</td>
+            <td>黃若庭 小提琴獨奏會</td>
             <td><a href="#" class="btn btn-gold btn-sm">購票</a></td>
           </tr>
         </tbody>
@@ -222,15 +251,47 @@
     </div>
   </section>
 
+  <!-- Publications -->
+  <section id="publications" class="container py-5">
+    <h2 class="section-title">出版品</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="album1.jpg" class="card-img-top" alt="專輯封面">
+          <div class="card-body">
+            <h5 class="card-title">《蕭邦夜曲全集》</h5>
+            <p class="card-text">余欣庭鋼琴獨奏 · 2025 發行</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="container py-5">
+    <h2 class="section-title">文創商品</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="product1.jpg" class="card-img-top" alt="音樂紀念T-shirt">
+          <div class="card-body">
+            <h5 class="card-title">星韻限定音樂T-Shirt</h5>
+            <p class="card-text text-muted">$880</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- News -->
   <section id="news" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">最新消息</h2>
+    <h2 class="section-title">最新消息</h2>
     <div class="row g-4">
-      <div class="col-md-6" data-aos="fade-right">
+      <div class="col-md-6">
         <div class="card p-3">
-          <h5>黃若庭發行《巴赫小提琴奏鳴曲》專輯</h5>
-          <p class="text-muted">2025-09-20</p>
-          <p>專輯收錄巴赫小提琴奏鳴曲，廣受樂評盛讚。</p>
+          <h5>黃若庭榮獲國際小提琴大賽銀牌</h5>
+          <p class="text-muted">2025-10-15</p>
+          <p>以細膩的音樂詮釋與舞台魅力，榮獲歐洲古典音樂大賽殊榮。</p>
         </div>
       </div>
     </div>
@@ -238,8 +299,8 @@
 
   <!-- Contact -->
   <section id="contact" class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">聯絡我們</h2>
-    <form id="contactForm" class="p-4 rounded shadow" data-aos="fade-up" data-aos-delay="150">
+    <h2 class="section-title">聯絡我們</h2>
+    <form id="contactForm">
       <div class="mb-3">
         <label class="form-label">姓名</label>
         <input type="text" class="form-control" required>
@@ -253,7 +314,6 @@
         <textarea class="form-control" rows="4" required></textarea>
       </div>
       <button type="submit" class="btn btn-gold">送出</button>
-      <div id="formMessage" class="alert alert-success mt-3">感謝您的聯絡，我們將儘快回覆！</div>
     </form>
   </section>
 
@@ -262,38 +322,6 @@
     <p>&copy; 2025 星韻古典音樂經紀公司 | All Rights Reserved</p>
   </footer>
 
-  <!-- Modal -->
-  <div class="modal fade" id="artistModal1" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content text-dark">
-        <div class="modal-header">
-          <h5 class="modal-title">余欣庭</h5>
-          <button class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p>鋼琴獨奏家，代表作：蕭邦夜曲全本。</p>
-          <audio controls><source src="piano.mp3" type="audio/mpeg"></audio>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const msg = document.getElementById("formMessage");
-      msg.style.display = "block";
-      msg.style.opacity = 1;
-      this.reset();
-      setTimeout(() => {
-        msg.style.transition = "opacity 1s";
-        msg.style.opacity = 0;
-      }, 3000);
-    });
-  </script>
 </body>
 </html>
